@@ -1,0 +1,31 @@
+.page-404 {
+  text-align: center;
+  margin: 50px auto;
+
+  &__num {
+    font-family: $secondary_font;
+    font-size: 150px;
+    line-height: 160px;
+    font-weight: 900;
+    color: $primary_black;
+  }
+
+  &__go-to {
+    font-style: italic;
+
+    a {
+      color: $secondary_black;
+      transition: .2s;
+
+      &:hover {
+        color: $primary_black;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .page-404__title {
+    font-size: 25px;
+  }
+}

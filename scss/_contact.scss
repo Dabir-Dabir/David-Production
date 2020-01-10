@@ -1,0 +1,222 @@
+.contact {
+  display: block;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+
+  &__title {
+    width: 100%;
+    grid-column-end: span 2;
+    text-align: center;
+  }
+}
+
+.body--lang-ka .contact {
+  &__title {
+    font-size: 28px;
+    letter-spacing: 2px;
+
+    @media (min-width: 350px) {
+      font-size: 30px;
+      letter-spacing: 3px;
+    }
+
+    @media (min-width: 600px) {
+      font-size: 40px;
+    }
+
+    @media (min-width: $laptop + 'px') {
+      font-size: 55px;
+    }
+  }
+}
+
+.contact-info {
+  max-width: 450px;
+  margin: 0 auto 30px;
+  text-align: center;
+
+  &__title {
+    display: none;
+  }
+
+  &__row-title {
+    text-align: center;
+  }
+
+  &__row-link {
+    display: inline-block;
+    text-align: center;
+    font-size: 19px;
+    font-weight: 600;
+    color: $secondary_black;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: .3s;
+    font: $main_font;
+
+    &:hover {
+      color: $primary_black;
+    }
+  }
+}
+
+.contact-form {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &__title {
+    display: none;
+  }
+
+  &__label {
+    display: inline-block;
+    margin-top: 10px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  &__input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid $secondary_black;
+    margin-top: 5px;
+    font-size: 19px;
+    font-weight: 400;
+    font-family: $main_font;
+    transition: .2s;
+    outline: none;
+
+    &::placeholder {
+      color: $black;
+      transition: .2s;
+    }
+
+    &:focus {
+      border-color: $primary_black;
+      &::placeholder {
+        color: $secondary_black;}
+    }
+  }
+
+  &__phone,
+  &__email {
+    font-family: $main_font;
+  }
+
+  @at-root .body--lang-ka .contact-form__name {
+    font-family: $g_font;
+  }
+
+  &__subject {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 20px;
+    border: 2px solid $secondary_black;
+    margin-top: 5px;
+    resize: vertical;
+    font-size: 16px;
+    font-weight: 400;
+    font-family: $main_font;
+    transition: .2s;
+    outline: none;
+
+    &::placeholder {
+      color: $black;
+      transition: .2s;
+    }
+
+    &:focus {
+      border-color: $primary_black;
+      &::placeholder {
+        color: $secondary_black;}
+    }
+
+    @at-root .body--lang-ka .contact-form__subject {
+      font-family: $g_font;
+    }
+  }
+
+  &__submit {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: transparent;
+    border: 2px solid $primary_black;
+    margin-top: 17px;
+    color: $primary_black;
+    font-size: 20px;
+    font-weight: 600;
+    outline: none;
+    transition: .2s;
+    cursor: pointer;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $primary_black;
+      color: #fff;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+
+  .contact-info {
+    margin-bottom: 50px;
+
+    &__table {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      grid-gap: 12px 30px;
+    }
+
+    &__row-title {
+      justify-self: right;
+    }
+
+    &__row-link {
+      justify-self: left;
+      margin: 0;
+      font-family: $main_font;
+    }
+  }
+}
+
+@media (min-width: $laptop + "px") {
+  .contact {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 30px;
+
+    &__title {
+      margin-bottom: 70px;
+    }
+  }
+
+  .contact-info {
+
+    &__title {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 50px;
+      text-align: left;
+
+      @at-root .body--lang-ru .contact-info__title {
+        font-size: 30px;
+      }
+
+      @at-root .body--lang-ka .contact-info__title {
+        font-size: 28px;
+      }
+    }
+  }
+}

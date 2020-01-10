@@ -1,0 +1,144 @@
+
+.portfolio {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+  font-family: $main_font;
+}
+
+@media (min-width: 600px) {
+  .portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: unset;
+  }
+}
+
+@media (min-width: $tablet + 'px') {
+  .portfolio {
+    max-width: 750px;
+    padding: 0;
+  }
+}
+
+@media (min-width: $laptop + 'px') {
+  .portfolio {
+    max-width: 850px;
+  }
+}
+
+@media (min-width: $hd + 'px') {
+  .portfolio {
+    max-width: 1000px;
+  }
+}
+
+.portfolio-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+
+  transition: .5s;
+  cursor: pointer;
+
+  &__content {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 50%;
+  }
+
+  &__iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+
+  }
+
+  &__image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+  }
+
+  &__overflow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(#000000, .2);
+
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+  }
+
+  &__title {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
+    width: 90%;
+    margin: 0;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 400;
+
+    opacity: 1;
+    visibility: visible;
+    transition: .3s;
+  }
+}
+
+.portfolio-item--playing {
+  .portfolio-item__iframe {
+    display: block;
+  }
+
+  .portfolio-item__image {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .portfolio-item__overflow {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .portfolio-item__title {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 600px) {
+
+  .portfolio-item {
+    width: calc(50% - 10px);
+
+    &--playing {
+      width: 100%;
+    }
+  }
+}

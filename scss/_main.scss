@@ -1,0 +1,180 @@
+
+/*
+  Position
+  Display
+  Box Model
+  Text
+  Other
+*/
+
+$main_font: 'Josefin Sans', sans-serif;
+$secondary_font: 'Playfair Display', serif;
+
+$g_font: "BPG Arial", sans-serif;
+$g_secondary_font: "BPG WEB 002 Caps", sans-serif;
+
+$primary_black: #222222;
+$secondary_black: #404040;
+$black: #707070;
+$light_gray: #A2A2A2;
+
+$tablet: 768;
+$laptop: 960;
+$hd: 1300;
+$full-hd: 1800;
+
+.body {
+  padding: 0;
+  margin: 0;
+
+  font-family: $main_font;
+  font-size: 17px;
+  line-height: 1.3;
+  font-weight: 400;
+  color: $secondary_black;
+
+  overflow: hidden auto;
+  outline: none;
+
+  &--lang-ka {
+    font-family: $g_font;
+  }
+}
+
+button,
+input {
+  outline: none;
+}
+
+@media (min-width: $tablet + 'px') {
+  .link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      top: calc(50% - 1px);
+      left: -100%;
+      content: '';
+      width: 100%;
+      height: 3px;
+
+      background-color: rgba($secondary_black, .4);
+
+      transition: .3s;
+    }
+
+    &:hover:before {
+      left: 0;
+    }
+  }
+}
+
+.main {
+  position: relative;
+  display: block;
+  width: 100%;
+  top: 55px;
+}
+
+@media (min-width: $tablet + 'px') {
+  .main {
+    top: 205px;
+  }
+}
+
+@media (min-width: $laptop + 'px') {
+  .main {
+    top: 220px;
+  }
+}
+
+.page-title {
+  margin: 30px auto 50px;
+  font-family: $secondary_font;
+  font-weight: 700;
+  color: $primary_black;
+  text-align: center;
+  font-size: 38px;
+  width: 90%;
+  letter-spacing: 2px;
+}
+
+@media (min-width: $tablet + "px") {
+  .page-title {
+    font-size: 45px;
+  }
+}
+
+@media (min-width: $laptop + "px") {
+  .page-title {
+    font-size: 55px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+.page-title--hidden {
+  display: none;
+}
+
+.section-title {
+  font-family: $secondary_font;
+  font-size: 35px;
+  font-weight: 700;
+  color: $secondary_black;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.body--lang-ka .section-title {
+  font-family: $g_secondary_font;
+}
+
+.instagram {
+  position: relative;
+  display: inline-block;
+  padding: 5px;
+  width: 20px;
+  color: $secondary_black;
+  transition: .2s;
+
+  &:hover {
+    color: $primary_black;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}
+
+.developed-by {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  text-align: right;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: $black;
+
+  &__link {
+    color: $black;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+
+    &:hover {
+      color: $secondary_black;
+    }
+  }
+
+  @media (min-width: $tablet + "px") {
+    text-align: center;
+  }
+}
